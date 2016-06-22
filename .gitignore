@@ -254,4 +254,4 @@ paket-files/
 
 #Allow
 
-!/TaskTimer/bin/Release/TaskTimer.exe
+!**/bin/Release/TaskTimer.exe
