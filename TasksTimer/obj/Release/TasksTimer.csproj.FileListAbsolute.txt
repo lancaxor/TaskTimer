@@ -1,0 +1,9 @@
+H:\workspace\vsprojects\TasksTimer\TasksTimer\bin\Release\TasksTimer.exe.config
+H:\workspace\vsprojects\TasksTimer\TasksTimer\bin\Release\TasksTimer.exe
+H:\workspace\vsprojects\TasksTimer\TasksTimer\bin\Release\TasksTimer.pdb
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.Form1.resources
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.Properties.Resources.resources
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.csproj.GenerateResource.Cache
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.exe
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.pdb
+H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.Prompt.resources
