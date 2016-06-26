@@ -12,6 +12,7 @@ namespace TasksTimer
         DateTime endTime;
         TimeSpan commonTime;
         Boolean isActive;
+        Boolean isReady;
         String comment;
         String url;
         Int32 id;
@@ -20,11 +21,13 @@ namespace TasksTimer
         public String Comment { get { return this.comment; } set { this.comment = value; } }
         public String Url { get { return this.url; } set { this.url = value; } }
         public Boolean IsActive { get { return this.isActive; } set { this.isActive = value; } }
+        public Boolean IsReady { get { return this.isReady; } set { this.isReady = value; } }
 
         public Task(String comment, Int32 id)
         {
             this.commonTime = new TimeSpan();
             this.isActive = false;
+            this.isReady = false;
             this.comment = comment;
             this.id = id;
             this.url = String.Empty;

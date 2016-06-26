@@ -85,5 +85,18 @@ namespace TasksTimer
         {
             return this.GetTaskById(id).GetTimeMinutes();
         }
+        public Tasker SetDone(int id)
+        {
+            this.GetTaskById(id).IsReady = true;
+            return this;
+        }
+        public List<Task> GetAllTasks()
+        {
+            return this.tasks;
+        }
+        public int GetCount()
+        {
+            return this.tasks.Count;
+        }
     }
 }

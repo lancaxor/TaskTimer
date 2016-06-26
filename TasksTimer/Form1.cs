@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 
 namespace TasksTimer
 {
@@ -202,11 +203,106 @@ namespace TasksTimer
                 this.panMain.Controls["tbTask_" + id].Enabled = false;
                 this.panMain.Controls["btnStart_" + id].Enabled = false;
                 (sender as CheckBox).Enabled = false;
+                this.tasker.SetDone(id);
             }
             else
             {
                 (sender as CheckBox).Checked = false;
             }
+        }
+
+        private void asHTMLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.tasker.GetCount() <= 0)
+            {
+                MessageBox.Show("Nothing to export.");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Html files | *.html | All files | *.* ";
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var tasks = this.tasker.GetAllTasks();
+                var dateTime = DateTime.Now.ToString();
+                StringBuilder builder = new StringBuilder("<!doctype html><head><title>" + dateTime + "</title><style>td,th {padding: 10px;}</style></head><body><p>" + dateTime + "</p><table border='1'><thead><tr><th>Title</th><th>Time</th><th>Done</th><th>Link</th></tr>");
+                foreach (var task in tasks)
+                {
+                    builder.AppendLine();
+                    builder.AppendFormat("<tr><td>{0}</td><td>{1: 0.00} minutes</td><td>{2}</td><td>", task.Comment, task.GetTimeMinutes(), task.IsReady ? "Yes" : "No");
+
+                    if (task.Url.Length > 0)
+                    {
+                        builder.AppendFormat("<a href='{0}' target='_blank'>{0}</a>", task.Url);
+                    }
+                    else
+                    {
+                        builder.Append("&lt;no link&gt;");
+                    }
+                    builder.Append("</td></tr>");
+                }
+
+                builder.AppendLine("<table></body></html>");
+
+                try
+                {
+                    StreamWriter writer = new StreamWriter(sfd.OpenFile());
+                    writer.Write(builder.ToString());
+                    writer.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while saving data to file: " + ex.Message);
+                }
+            }
+        }
+
+        private void asTXTToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.tasker.GetCount() <= 0)
+            {
+                MessageBox.Show("Nothing to export.");
+                return;
+            }
+
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Text files | *.txt | All files | *.* ";
+            if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                var tasks = this.tasker.GetAllTasks();
+                StringBuilder builder = new StringBuilder(DateTime.Now.ToString());
+                foreach (var task in tasks)
+                {
+                    builder.AppendLine();
+                    builder.AppendFormat("{0}\t{1: 0.00} minutes", task.Comment, task.GetTimeMinutes());
+                    if (task.IsReady)
+                    {
+                        builder.Append(" (task finished)");
+                    }
+
+                    if (task.Url.Length > 0)
+                    {
+                        builder.AppendFormat("\t({0})", task.Url);
+                    }
+                }
+
+                try
+                {
+                    StreamWriter writer = new StreamWriter(sfd.OpenFile());
+                    writer.Write(builder.ToString());
+                    writer.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error while saving data to file: " + ex.Message);
+                }
+            }
+        }
+
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            Point location = new Point(this.Left + (sender as Button).Left, this.Top + (sender as Button).Bottom - this.cmsExport.Height);
+            this.cmsExport.Show(location);
         }
     }
 }

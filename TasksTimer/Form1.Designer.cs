@@ -35,6 +35,7 @@
             this.btnOpenLink_0 = new System.Windows.Forms.Button();
             this.btnCopyTime_0 = new System.Windows.Forms.Button();
             this.panMain = new System.Windows.Forms.Panel();
+            this.btnEditUrl_0 = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.cbDone_0 = new System.Windows.Forms.CheckBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,9 +45,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.lblMinutes = new System.Windows.Forms.Label();
             this.btnResetAll = new System.Windows.Forms.Button();
-            this.btnEditUrl_0 = new System.Windows.Forms.Button();
             this.mainTooltip = new System.Windows.Forms.ToolTip(this.components);
+            this.btnExport = new System.Windows.Forms.Button();
+            this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.asHTMLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asTXTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panMain.SuspendLayout();
+            this.cmsExport.SuspendLayout();
             this.SuspendLayout();
             // 
             // tbTime_0
@@ -116,6 +121,16 @@
             this.panMain.Name = "panMain";
             this.panMain.Size = new System.Drawing.Size(851, 411);
             this.panMain.TabIndex = 5;
+            // 
+            // btnEditUrl_0
+            // 
+            this.btnEditUrl_0.Location = new System.Drawing.Point(758, 23);
+            this.btnEditUrl_0.Name = "btnEditUrl_0";
+            this.btnEditUrl_0.Size = new System.Drawing.Size(75, 23);
+            this.btnEditUrl_0.TabIndex = 9;
+            this.btnEditUrl_0.Text = "Edit Url";
+            this.btnEditUrl_0.UseVisualStyleBackColor = true;
+            this.btnEditUrl_0.Click += new System.EventHandler(this.btnEditUrl_Click);
             // 
             // label4
             // 
@@ -202,21 +217,44 @@
             this.btnResetAll.UseVisualStyleBackColor = true;
             this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
             // 
-            // btnEditUrl_0
+            // btnExport
             // 
-            this.btnEditUrl_0.Location = new System.Drawing.Point(758, 23);
-            this.btnEditUrl_0.Name = "btnEditUrl_0";
-            this.btnEditUrl_0.Size = new System.Drawing.Size(75, 23);
-            this.btnEditUrl_0.TabIndex = 9;
-            this.btnEditUrl_0.Text = "Edit Url";
-            this.btnEditUrl_0.UseVisualStyleBackColor = true;
-            this.btnEditUrl_0.Click += new System.EventHandler(this.btnEditUrl_Click);
+            this.btnExport.Location = new System.Drawing.Point(549, 429);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(75, 23);
+            this.btnExport.TabIndex = 10;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
+            // cmsExport
+            // 
+            this.cmsExport.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asHTMLToolStripMenuItem,
+            this.asTXTToolStripMenuItem});
+            this.cmsExport.Name = "cmsExport";
+            this.cmsExport.Size = new System.Drawing.Size(124, 48);
+            // 
+            // asHTMLToolStripMenuItem
+            // 
+            this.asHTMLToolStripMenuItem.Name = "asHTMLToolStripMenuItem";
+            this.asHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asHTMLToolStripMenuItem.Text = "As HTML";
+            this.asHTMLToolStripMenuItem.Click += new System.EventHandler(this.asHTMLToolStripMenuItem_Click);
+            // 
+            // asTXTToolStripMenuItem
+            // 
+            this.asTXTToolStripMenuItem.Name = "asTXTToolStripMenuItem";
+            this.asTXTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asTXTToolStripMenuItem.Text = "As TXT";
+            this.asTXTToolStripMenuItem.Click += new System.EventHandler(this.asTXTToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 464);
+            this.Controls.Add(this.btnExport);
             this.Controls.Add(this.btnResetAll);
             this.Controls.Add(this.lblMinutes);
             this.Controls.Add(this.label3);
@@ -227,6 +265,7 @@
             this.Text = "Tasks Timer";
             this.panMain.ResumeLayout(false);
             this.panMain.PerformLayout();
+            this.cmsExport.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,6 +290,10 @@
         private System.Windows.Forms.CheckBox cbDone_0;
         private System.Windows.Forms.Button btnEditUrl_0;
         private System.Windows.Forms.ToolTip mainTooltip;
+        private System.Windows.Forms.Button btnExport;
+        private System.Windows.Forms.ContextMenuStrip cmsExport;
+        private System.Windows.Forms.ToolStripMenuItem asHTMLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asTXTToolStripMenuItem;
     }
 }
 
