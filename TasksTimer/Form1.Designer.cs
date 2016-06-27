@@ -238,14 +238,14 @@
             // asHTMLToolStripMenuItem
             // 
             this.asHTMLToolStripMenuItem.Name = "asHTMLToolStripMenuItem";
-            this.asHTMLToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asHTMLToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.asHTMLToolStripMenuItem.Text = "As HTML";
             this.asHTMLToolStripMenuItem.Click += new System.EventHandler(this.asHTMLToolStripMenuItem_Click);
             // 
             // asTXTToolStripMenuItem
             // 
             this.asTXTToolStripMenuItem.Name = "asTXTToolStripMenuItem";
-            this.asTXTToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.asTXTToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.asTXTToolStripMenuItem.Text = "As TXT";
             this.asTXTToolStripMenuItem.Click += new System.EventHandler(this.asTXTToolStripMenuItem_Click);
             // 
@@ -261,6 +261,8 @@
             this.Controls.Add(this.btnAddTask);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.panMain);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Tasks Timer";
             this.panMain.ResumeLayout(false);

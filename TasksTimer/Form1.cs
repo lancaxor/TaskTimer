@@ -246,9 +246,10 @@ namespace TasksTimer
 
                 try
                 {
-                    StreamWriter writer = new StreamWriter(sfd.OpenFile());
+                    StreamWriter writer = new StreamWriter(sfd.OpenFile(), Encoding.Unicode);
                     writer.Write(builder.ToString());
                     writer.Close();
+                    MessageBox.Show("File saved successfully!");
                 }
                 catch (Exception ex)
                 {
@@ -288,9 +289,10 @@ namespace TasksTimer
 
                 try
                 {
-                    StreamWriter writer = new StreamWriter(sfd.OpenFile());
+                    StreamWriter writer = new StreamWriter(sfd.OpenFile(), Encoding.Unicode);
                     writer.Write(builder.ToString());
                     writer.Close();
+                    MessageBox.Show("File saved successfully!");
                 }
                 catch (Exception ex)
                 {
