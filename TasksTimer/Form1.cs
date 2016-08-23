@@ -220,7 +220,7 @@ namespace TasksTimer
             }
 
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Html files | *.html | All files | *.* ";
+            sfd.Filter = "Html files |*.html| All files |*.*";
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var tasks = this.tasker.GetAllTasks();
@@ -267,7 +267,7 @@ namespace TasksTimer
             }
 
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.Filter = "Text files | *.txt | All files | *.* ";
+            sfd.Filter = "Text files |*.txt| All files |*.*";
             if (sfd.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
                 var tasks = this.tasker.GetAllTasks();

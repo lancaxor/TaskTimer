@@ -44,7 +44,6 @@
             this.btnAddTask = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.lblMinutes = new System.Windows.Forms.Label();
-            this.btnResetAll = new System.Windows.Forms.Button();
             this.mainTooltip = new System.Windows.Forms.ToolTip(this.components);
             this.btnExport = new System.Windows.Forms.Button();
             this.cmsExport = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -171,7 +170,7 @@
             // 
             // btnRefresh
             // 
-            this.btnRefresh.Location = new System.Drawing.Point(711, 429);
+            this.btnRefresh.Location = new System.Drawing.Point(792, 429);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(75, 23);
             this.btnRefresh.TabIndex = 2;
@@ -181,7 +180,7 @@
             // 
             // btnAddTask
             // 
-            this.btnAddTask.Location = new System.Drawing.Point(630, 429);
+            this.btnAddTask.Location = new System.Drawing.Point(711, 429);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(75, 23);
             this.btnAddTask.TabIndex = 1;
@@ -207,19 +206,9 @@
             this.lblMinutes.TabIndex = 9;
             this.lblMinutes.Text = "0 minutes";
             // 
-            // btnResetAll
-            // 
-            this.btnResetAll.Location = new System.Drawing.Point(792, 429);
-            this.btnResetAll.Name = "btnResetAll";
-            this.btnResetAll.Size = new System.Drawing.Size(75, 23);
-            this.btnResetAll.TabIndex = 3;
-            this.btnResetAll.Text = "Reset All";
-            this.btnResetAll.UseVisualStyleBackColor = true;
-            this.btnResetAll.Click += new System.EventHandler(this.btnResetAll_Click);
-            // 
             // btnExport
             // 
-            this.btnExport.Location = new System.Drawing.Point(549, 429);
+            this.btnExport.Location = new System.Drawing.Point(630, 429);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(75, 23);
             this.btnExport.TabIndex = 10;
@@ -255,7 +244,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(879, 464);
             this.Controls.Add(this.btnExport);
-            this.Controls.Add(this.btnResetAll);
             this.Controls.Add(this.lblMinutes);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnAddTask);
@@ -287,7 +275,6 @@
         private System.Windows.Forms.Button btnAddTask;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblMinutes;
-        private System.Windows.Forms.Button btnResetAll;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox cbDone_0;
         private System.Windows.Forms.Button btnEditUrl_0;
