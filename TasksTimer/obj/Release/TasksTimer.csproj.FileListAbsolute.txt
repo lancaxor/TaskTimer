@@ -7,3 +7,13 @@ H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.csproj.Gene
 H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.exe
 H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.pdb
 H:\workspace\vsprojects\TasksTimer\TasksTimer\obj\Release\TasksTimer.Prompt.resources
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\bin\Release\TasksTimer.exe.config
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\bin\Release\TasksTimer.exe
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\bin\Release\TasksTimer.pdb
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.Form1.resources
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.Prompt.resources
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.Properties.Resources.resources
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.csproj.GenerateResource.cache
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.csproj.CoreCompileInputs.cache
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.exe
+C:\Users\Owner\Workspace\0.ME\TaskTimer\TasksTimer\obj\Release\TasksTimer.pdb

@@ -1,27 +1,47 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace TasksTimer
 {
-    class Task
+
+    [Serializable]
+    [XmlRoot(ElementName = "Task")]
+    public class Task
     {
-        DateTime startTime;
-        DateTime endTime;
-        TimeSpan commonTime;
-        Boolean isActive;
-        Boolean isReady;
-        String comment;
-        String url;
-        Int32 id;
+        private DateTime startTime;
+        private DateTime endTime;
+        private TimeSpan commonTime;
+        private Boolean isActive;
+        private Boolean isReady;    // done
+        private String comment;
+        private String url;
+        private Int32 id;
 
         public Int32 ID { get { return this.id; } set { this.id = value; } }
         public String Comment { get { return this.comment; } set { this.comment = value; } }
         public String Url { get { return this.url; } set { this.url = value; } }
         public Boolean IsActive { get { return this.isActive; } set { this.isActive = value; } }
         public Boolean IsReady { get { return this.isReady; } set { this.isReady = value; } }
+
+        [XmlIgnore]
+        public TimeSpan CommonTime { get => commonTime; set => commonTime = value; }
+
+        // Property for serialization instead of TimeStamp
+        [XmlElement("CommonTicks")]
+        public long CommonTicks { get => commonTime.Ticks; set => commonTime = new TimeSpan(value); }
+
+        public DateTime EndTime { get => endTime; set => endTime = value; }
+        public DateTime StartTime { get => startTime; set => startTime = value; }
+
+        public Task()
+        {
+            this.commonTime = new TimeSpan();
+            this.isActive = false;
+            this.isReady = false;
+            this.comment = "";
+            this.id = 0;
+            this.url = String.Empty;
+        }
 
         public Task(String comment, Int32 id)
         {
@@ -32,6 +52,7 @@ namespace TasksTimer
             this.id = id;
             this.url = String.Empty;
         }
+
         public void Start()
         {
             if (!this.isActive)
@@ -66,6 +87,11 @@ namespace TasksTimer
         {
             return this.GetTimeElapsed().TotalMinutes;
             //return this.GetTimeElapsed().TotalSeconds;    //debug...
+        }
+
+        public String formatTimeMunites()
+        {
+            return String.Format("{0: 0.00} minutes", this.GetTimeMinutes());
         }
     }
 }

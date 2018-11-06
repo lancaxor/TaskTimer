@@ -9,6 +9,7 @@ namespace TasksTimer
     class Tasker
     {
         List<Task> tasks;
+
         public Tasker()
         {
             tasks = new List<Task>();
@@ -19,6 +20,14 @@ namespace TasksTimer
             this.tasks.Add(newTask);
             return this;
         }
+
+        public Tasker AddTask(Task task, Int32 id)
+        {
+            task.ID = id;
+            this.tasks.Add(task);
+            return this;
+        }
+
         public Tasker DropTask(int index)
         {
             var task = this.GetTaskById(index);
@@ -71,6 +80,7 @@ namespace TasksTimer
             var tasks = from t in this.tasks where t.ID == id select t;
             return tasks.Single<Task>();
         }
+
         public Double GetSummaryTime()
         {
             double result = 0.0;
